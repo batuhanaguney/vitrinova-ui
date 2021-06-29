@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="270dp"
+    android:background="@android:color/transparent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/editorCardView"
+            android:layout_width="250dp"
+            android:layout_height="220dp"
+            android:background="@android:color/transparent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="1dp"
+            android:layout_marginLeft="25dp"
+
+
+            android:layout_marginTop="50dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/editorShopTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="Gulp Design"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/editorShopDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:text="Özgün İllüstrasyon çizimi ile kupa"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/editorShopImg1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    app:riv_corner_radius="5dp"
+                    app:layout_constraintEnd_toStartOf="@id/editorShopImg2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editorShopDesc" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/editorShopImg2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    app:riv_corner_radius="5dp"
+                    app:layout_constraintEnd_toStartOf="@id/editorShopImg3"
+                    app:layout_constraintStart_toEndOf="@id/editorShopImg1"
+                    app:layout_constraintTop_toBottomOf="@+id/editorShopDesc" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/editorShopImg3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    app:riv_corner_radius="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/editorShopImg2"
+                    app:layout_constraintTop_toBottomOf="@+id/editorShopDesc" />
+
+                <Button
+                    android:id="@+id/editorShopButton"
+                    android:layout_width="170dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/buton_bg"
+                    android:text="VİTRİNE GİT"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/editorImgProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        app:civ_border_color="#9E9E9E"
+        app:civ_border_width="1dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+
+
+
+</RelativeLayout>
+
+
+
