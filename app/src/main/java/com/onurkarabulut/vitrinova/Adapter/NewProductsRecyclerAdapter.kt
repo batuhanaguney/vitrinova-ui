@@ -7,16 +7,19 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.animation.AnimationUtils
+import com.onurkarabulut.vitrinova.Model.NewProducts.NewProducts
 import com.onurkarabulut.vitrinova.Model.Products
 import com.onurkarabulut.vitrinova.R
 import com.onurkarabulut.vitrinova.Util.createPlaceHolder
 import com.onurkarabulut.vitrinova.Util.loadImage
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_discover.view.*
 import kotlinx.android.synthetic.main.new_products_item.view.*
 
-class NewProductsRecyclerAdapter(val productList : List<Products>) : RecyclerView.Adapter<NewProductsRecyclerAdapter.ViewHolder>() {
+class NewProductsRecyclerAdapter(val productList : List<NewProducts>) : RecyclerView.Adapter<NewProductsRecyclerAdapter.ViewHolder>() {
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -24,23 +27,34 @@ class NewProductsRecyclerAdapter(val productList : List<Products>) : RecyclerVie
         return ViewHolder(view)
     }
 
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        holder.itemView.newProductsImg.setImageResource(productList.get(position).imageUrl)
-        holder.itemView.newProductsTitle.setText(productList.get(position).title)
-        holder.itemView.newProductsSubTitle.setText(productList.get(position).subTitle)
-        holder.itemView.newProductsNewPrice.setText(productList.get(position).newPrice)
-        if (productList.get(position) == null){
-            holder.itemView.newProductsOldPrice.setText("")
+        Picasso.get()
+            .load(productList.get(position).images!!.first().medium!!.url)
+            .fit()
+            .into( holder.itemView.newProductsImg)
+        val title = productList.get(position).title
+        if (productList.get(position).title!!.length > 20){
+            val newTitle = productList.get(position).title!!.take(20) + "..."
+            holder.itemView.newProductsTitle.text = newTitle
         }else{
-            holder.itemView.newProductsOldPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-            holder.itemView.newProductsOldPrice.setText(productList.get(position).oldPrice)
+            holder.itemView.newProductsTitle.text = productList.get(position).title
         }
+        holder.itemView.newProductsSubTitle.text = productList.get(position).shop!!.name
+        val price = productList.get(position).price!!.toString() + " TL"
+        holder.itemView.newProductsNewPrice.text =  price
 
+        if (productList.get(position).old_price == null){
+            holder.itemView.newProductsOldPrice.text = ""
+        }else{
+            val oldPrice = productList.get(position).old_price!!.toString() + " TL"
+            holder.itemView.newProductsOldPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+            holder.itemView.newProductsOldPrice.text = oldPrice
+        }
     }
+
 
     override fun getItemCount(): Int {
         return productList.size
     }
-
 }

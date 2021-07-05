@@ -7,66 +7,75 @@
     android:layout_marginTop="10dp"
     android:layout_marginStart="10dp"
     app:cardElevation="1dp"
-    app:cardCornerRadius="10dp">
-
-    <ImageView
-        android:id="@+id/newProductsImg"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        android:src="@color/black" />
-    <TextView
-        android:id="@+id/newProductsTitle"
-        android:layout_width="135dp"
-        android:layout_height="15dp"
-        android:text="Göz Küpe"
-        android:textSize="15sp"
-        android:textColor="#616161"
-        android:textStyle="bold"
-        android:fontFamily="@font/branding_sf_narrow_medium"
-        android:layout_marginTop="160dp"
-        android:layout_marginStart="10dp"
-        />
-    <TextView
-        android:id="@+id/newProductsSubTitle"
-        android:layout_width="135dp"
-        android:layout_height="15dp"
-        android:text="Manessa"
-        android:textSize="15sp"
-        android:textColor="#9E9E9E"
-        android:fontFamily="@font/branding_sf_narrow_medium"
-        android:layout_marginTop="180dp"
-        android:layout_marginStart="10dp"
-        />
-    <ImageView
-        android:layout_marginTop="210dp"
+    app:cardCornerRadius="4dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:src="@drawable/new_products_bottom_bg"
-        android:layout_height="30dp"/>
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/newProductsImg"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/newProductsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/branding_sf_narrow_medium"
+            android:text="Göz Küpe"
+            android:textColor="#616161"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newProductsImg" />
+        <TextView
+            android:id="@+id/newProductsSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/branding_sf_narrow_medium"
+            android:text="Manessa"
+            android:textColor="#9E9E9E"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newProductsTitle" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:src="@drawable/new_products_bottom_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/newProductsNewPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="28 TL"
+            android:textColor="#616161"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/newProductsNewPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="28 TL"
-        android:textSize="15sp"
-        android:textColor="#616161"
-        android:textStyle="bold"
-        android:layout_marginTop="215dp"
-        android:layout_marginStart="10dp"
-        />
-    <TextView
-        android:id="@+id/newProductsOldPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="34 TL"
-        android:textSize="13sp"
-        android:textColor="#616161"
-        android:singleLine="true"
-
-        android:layout_marginTop="217dp"
-        android:layout_marginStart="60dp"
-        />
-
+        <TextView
+            android:id="@+id/newProductsOldPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_margin="5dp"
+            android:text="34 TL"
+            android:textColor="#616161"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/newProductsNewPrice" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

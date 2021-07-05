@@ -29,38 +29,54 @@
                 android:layout_margin="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/showCaseImg" />
+            <Button
+                android:id="@+id/showCaseShopButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="20dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:textColor="#FFFFFF"
+                android:clickable="false"
+                android:background="@drawable/shop_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/showCaseImg"/>
 
             <TextView
                 android:id="@+id/showCaseTitleTxt"
                 android:layout_width="200dp"
                 android:layout_height="25dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
                 android:text="Ahsapevi"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/showCaseShopImg"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/showCaseImg" />
 
             <TextView
                 android:id="@+id/showCaseExpTxt"
                 android:layout_width="200dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="20dp"
                 android:text="Ahsapevi"
                 android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/showCaseShopImg"
+
+
+                app:layout_constraintStart_toStartOf="@+id/showCaseTitleTxt"
                 app:layout_constraintTop_toBottomOf="@+id/showCaseTitleTxt" />
+
             <TextView
                 android:id="@+id/showCaseItemCountTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textStyle="bold"
                 android:text="Ahsapevi"
                 android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/showCaseShopImg"
+                android:textStyle="bold"
+
+
+                app:layout_constraintStart_toStartOf="@+id/showCaseExpTxt"
                 app:layout_constraintTop_toBottomOf="@+id/showCaseExpTxt" />
 
 

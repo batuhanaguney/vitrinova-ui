@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/productsFragment2"
+        android:icon="@drawable/products_icon"
+        android:title="Ürünler"/>
+    <item
+        android:id="@+id/discoverFragment2"
+        android:icon="@drawable/search_icon"
+        android:title="Keşfet"/>
+    <item
+        android:id="@+id/notificationsFragment2"
+        android:icon="@drawable/notify_icon"
+        android:title="Bildirimler"/>
+
+</menu>
